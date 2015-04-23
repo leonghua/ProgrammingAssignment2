@@ -1,11 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
 
-## Write a short comment describing this function
-
-# this function works like a class, it creates a list
+# this function works like a class, it creates a list (special vector)
 # that contains 4 member functions: set, get, setInv
-# and getInv. it uses <<- assignment operator so that
+# and getInv. set/get the value of the vector or mean (using setInv/getInv). 
+# it uses <<- assignment operator for local environment so that
 # these internal variables are not exposed to the
 # outside environment. 
 
@@ -35,7 +32,11 @@
 	       getInv = getInv)
   }
 
-## Write a short comment describing this function
+# this function calculates the mean of the special "vector" created with the above function. 
+# it first checks to see if the mean has already been calculated. 
+# If so, it gets the mean from the cache and skips the computation. 
+# otherwise, it calculates the mean of the data and 
+# sets the value of the mean in the cache via the setmean (e.g.setInv) function.
 
   cacheSolve <- function(x, ...) {
       m <- x$getInv() # get the inversed matrix from object x
